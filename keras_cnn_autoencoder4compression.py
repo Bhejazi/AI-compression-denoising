@@ -17,6 +17,7 @@ import numpy as np
 import matplotlib.pyplot
 from PIL import Image
 from colorama import Fore, Style
+import visualkeras
 # import json
 
 #%% Preparing Dataset
@@ -152,9 +153,9 @@ for im_ind in range(num_images_to_show):
 size_conversion = "512x512-to-128x128x8"
 file_extension = "binary-images-CNN"
 
-encoded_path = f"M:/codes/codes_BAM/python/autoencoder/temp/encoded/encoded_compress_{size_conversion}-{file_extension}.npy"
-decoded_path = f"M:/codes/codes_BAM/python/autoencoder/temp/decoded/decoded_compress_{size_conversion}-{file_extension}.npy"
-train_images_path = f"M:/codes/codes_BAM/python/autoencoder/temp/train_images_compress-{file_extension}.npy"
+encoded_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
+decoded_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
+train_images_path = f"yourfilepath_{file_extension}.npy"
 
 np.save(encoded_path, encoded_images)
 np.save(decoded_path, decoded_images)
@@ -162,13 +163,13 @@ np.save(decoded_path, decoded_images)
 #%%
 #!mkdir -p saved_model
 #model.save('saved_model/my_model')
-#ae.save('M:/codes/codes_BAM/python/autoencoder/temp/model_compress_512x512-to-64x64x4-loss0.067-v2.keras') 
+#ae.save('yourfilepath_.keras') 
 
 #%% Save model weights
-encoder.save('M:/codes/codes_BAM/python/autoencoder/temp/models/encoder_model-512x512-to-64x64x4-8bit-orig-tifs.h5')
-decoder.save('M:/codes/codes_BAM/python/autoencoder/temp/models/decoder_model-512x512-to-64x64x4-8bit-orig-tifs.h5')
+encoder.save('yourfilepath_.h5')
+decoder.save('yourfilepath_.h5')
 
 #%% Model visualization
-import visualkeras
 visualkeras.layered_view(encoder, draw_volume=True, spacing=100, scale_xy=1, scale_z=1)
 visualkeras.layered_view(decoder, draw_volume=True, spacing=100, scale_xy=1, scale_z=1, draw_reversed=True)
+
