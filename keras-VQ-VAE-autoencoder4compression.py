@@ -12,6 +12,7 @@ from PIL import Image
 from colorama import Fore, Style
 import numpy as np
 import matplotlib.pyplot as plt
+import visualkeras
 
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -277,15 +278,15 @@ for i in range(len(train_images_vis)):
 size_conversion = "512x512-to-64x64x4"
 file_extension = "binary-images-VQ-VAE"
 
-encoded_path = f"M:/codes/codes_BAM/python/autoencoder/temp/encoded/encoded_compress_{size_conversion}-{file_extension}.npy"
-decoded_path = f"M:/codes/codes_BAM/python/autoencoder/temp/decoded/decoded_compress_{size_conversion}-{file_extension}.npy"
-train_images_path = f"M:/codes/codes_BAM/python/autoencoder/temp/train_images_compress-{file_extension}.npy"
+encoded_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
+decoded_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
+train_images_path = f"yourfilepath_{file_extension}.npy"
 
 np.save(encoded_path, encoded_outputs)
 np.save(decoded_path, reconstructions_train)
 # np.save(train_images_path, train_images)
 
 #%% Model visualization
-import visualkeras
 visualkeras.layered_view(get_encoder(), draw_volume=True, spacing=100, scale_xy=1, scale_z=1)
+
 visualkeras.layered_view(get_decoder(), draw_volume=True, spacing=100, scale_xy=1, scale_z=1, draw_reversed=True)
