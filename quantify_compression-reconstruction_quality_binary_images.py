@@ -21,9 +21,9 @@ import cv2 as cv
 size_conversion = "512x512-to-128x128x8"
 file_extension = "binary-images-CNN"
 
-orig_img_path = f"M:/codes/codes_BAM/python/autoencoder/temp/train_images_compress-{file_extension}.npy"
-compressed_img_path = f"M:/codes/codes_BAM/python/autoencoder/temp/encoded/encoded_compress_{size_conversion}-{file_extension}.npy"
-recon_img_path = f"M:/codes/codes_BAM/python/autoencoder/temp/decoded/decoded_compress_{size_conversion}-{file_extension}.npy"
+orig_img_path = f"yourfilepath_{file_extension}.npy"
+compressed_img_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
+recon_img_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
 
 if file_extension[-3:] == "CNN":
     correction = 0
@@ -54,7 +54,7 @@ for im_ind in range(num_images_to_show):
     plt.title("Decoded")
     
     plt.subplots_adjust(wspace=0.4, hspace=5)
-    #plt.savefig(f"M:/codes/codes_BAM/python/autoencoder/temp/figures/visual_comparison_{size_conversion}-{file_extension}", dpi=600)
+    #plt.savefig(f"yourfilepath_{size_conversion}-{file_extension}", dpi=600)
 
 #%% Threshold images
 decoded_images_int8 = (decoded_images*255).astype("uint8")
@@ -115,5 +115,6 @@ plt.imshow(edge_diffs[rand_ind, :, :], cmap="gray")
 plt.title("Diff image")
 
 plt.subplots_adjust(wspace=0.5, hspace=5)
-plt.savefig(f"M:/codes/codes_BAM/python/autoencoder/temp/figures/visual_comparison_edges_{size_conversion}-{file_extension}", dpi=600)
+plt.savefig(f"yourfilepath_{size_conversion}-{file_extension}", dpi=600)
+
 
