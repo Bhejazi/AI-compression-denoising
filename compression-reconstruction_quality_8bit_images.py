@@ -17,9 +17,9 @@ import cv2 as cv
 size_conversion = "512x512-to-128x128x8"
 file_extension = "8bit-orig-tifs-VQ-VAE"
 
-orig_img_path = f"M:/codes/codes_BAM/python/autoencoder/temp/train_images_compress-{file_extension}.npy"
-compressed_img_path = f"M:/codes/codes_BAM/python/autoencoder/temp/encoded/encoded_compress_{size_conversion}-{file_extension}.npy"
-recon_img_path = f"M:/codes/codes_BAM/python/autoencoder/temp/decoded/decoded_compress_{size_conversion}-{file_extension}.npy"
+orig_img_path = f"yourfilepath_{file_extension}.npy"
+compressed_img_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
+recon_img_path = f"yourfilepath_{size_conversion}-{file_extension}.npy"
 
 if file_extension[-3:] == "CNN":
     correction = 0
@@ -50,7 +50,7 @@ for im_ind in range(num_images_to_show):
     plt.title("Decoded")
     
     plt.subplots_adjust(wspace=0.4, hspace=5)
-    #plt.savefig(f"M:/codes/codes_BAM/python/autoencoder/temp/figures/8bit_comparison/visual_comparison_{size_conversion}-{file_extension}", dpi=600)
+    #plt.savefig(f"yourfilepath_{size_conversion}-{file_extension}", dpi=600)
 #%% Calculate metrics
 total_vol = orig_img.size
 
@@ -80,8 +80,9 @@ plt.imshow(decoded_img_thresh[rand_ind, :, :], cmap="gray")
 plt.title("Decoded thresholded")
     
 plt.subplots_adjust(wspace=0.4, hspace=5)
-plt.savefig(f"M:/codes/codes_BAM/python/autoencoder/temp/figures/8bit_comparison/visual_comparison_thresholded_{size_conversion}-{file_extension}", dpi=600)
+plt.savefig(f"yourfilepath_{size_conversion}-{file_extension}", dpi=600)
 
 #%%
 MSE_thresh = np.sum(np.absolute(orig_img_thresh - decoded_img_thresh))/orig_img.size
+
 PSNR_thresh = -10*np.log10(MSE)
