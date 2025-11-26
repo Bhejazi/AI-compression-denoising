@@ -1,4 +1,4 @@
-# Codes used for compression of X-ray computed tomography images with AI
+# Codes used for compression and denoising of X-ray computed tomography images with AI
 
 - Models used have a CNN and VQ-VAE architecture with customizable number of layers.
 
