@@ -4,7 +4,7 @@
 
 - Codes used to evaluate the quality of the recovered images after compression are also included. The evaluation was done for 8-bit and binary images.
 
-The work related to these scripts are currently published. Please use appropriate citation for the published article titled "D-CNN and VQ-VAE Autoencoders for Compression and Denoising of Industrial X-ray Computed Tomography Images"  
+The work related to these scripts has been published. Please use appropriate citation for the published article titled "D-CNN and VQ-VAE Autoencoders for Compression and Denoising of Industrial X-ray Computed Tomography Images"  
 
 The article is available at: https://doi.org/10.3233/FAIA251480
 
